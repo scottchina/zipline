@@ -12,6 +12,19 @@ Development
 Highlights
 ~~~~~~~~~~
 
+Extensible Risk and Performance Metrics (:issue:`2081`)
+```````````````````````````````````````````````````````
+
+The risk and performance metrics are summarizing values calculated by Zipline
+when running a simulation, for example: returns or Sharpe ratio. 1.1.2
+introduces a new API for registering custom risk and performance metrics defined
+by the user. We have also made it possible to run a backtest without computing
+any metrics to improve the feedback cycle when debugging an algorithm.
+
+For more information, see :ref:`metrics`.
+
+Bundles, Docs, and Benchmarks
+`````````````````````````````
 Zipline now defaults to using the ``quandl`` bundle, which you'll need an API Key for, and can find information about in the Data Bundles documentation.
 
 We've added many Tutorial & Documentations updates, including information on how to create your own ``TradingCalendar``, pass it to your algorithm via the Zipline CLI, and how to use custom csv data using the ``csvdir`` bundle.
@@ -19,6 +32,9 @@ We've added many Tutorial & Documentations updates, including information on how
 Zipline is no longer being tested and packaged for Python 3.4.
 
 Zipline now requests data for SPY, the default benchmark used for Zipline backtests, using the `IEX Trading <https://iextrading.com>__` API, and no longer uses ``pandas-datareader``. You can run a backtest up to 5 years from the current day using this data.
+
+
+
 
 Enhancements
 ~~~~~~~~~~~~
@@ -62,6 +78,7 @@ Performance
 - Add a new factor that just computes beta (:issue:`2021`)
 - Reduces memory footprint of Quandl WIKI Prices bundle (:issue:`2053`)
 
+
 Maintenance and Refactorings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -98,6 +115,7 @@ Documentation
 - Add CONTRIBUTING.rst (:issue:`2033`)
 - Add tutorial on creating a custom ``TradingCalendar`` (:issue:`2035`)
 - Docs & tutorial updates for ingesting, beginners, and csvdir (:issue:`2073`)
+- Documented the new risk and performance metrics API (:issue:`2081`).
 
 Miscellaneous
 ~~~~~~~~~~~~~
