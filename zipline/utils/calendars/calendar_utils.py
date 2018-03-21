@@ -3,6 +3,7 @@ from zipline.errors import (
     CyclicCalendarAlias,
     InvalidCalendarName,
 )
+from zipline.utils.calendars.exchange_calendar_crypto import CRYPTOExchangeCalendar
 from zipline.utils.calendars.exchange_calendar_cfe import CFEExchangeCalendar
 from zipline.utils.calendars.exchange_calendar_ice import ICEExchangeCalendar
 from zipline.utils.calendars.exchange_calendar_nyse import NYSEExchangeCalendar
@@ -15,6 +16,7 @@ from zipline.utils.calendars.us_futures_calendar import (
 )
 
 _default_calendar_factories = {
+    'CRYPTO': CRYPTOExchangeCalendar,
     'NYSE': NYSEExchangeCalendar,
     'CME': CMEExchangeCalendar,
     'ICE': ICEExchangeCalendar,
@@ -25,6 +27,7 @@ _default_calendar_factories = {
     'us_futures': QuantopianUSFuturesCalendar,
 }
 _default_calendar_aliases = {
+    'CRYPTOAsset': 'CRYPTO',
     'NASDAQ': 'NYSE',
     'BATS': 'NYSE',
     'CBOT': 'CME',
