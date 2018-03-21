@@ -120,7 +120,8 @@ def csvdir_bundle(environ,
         raise ValueError("%s is not a directory" % csvdir)
 
     if not tframes:
-        tframes = set(["daily", "minute"]).intersection(os.listdir(csvdir))
+        #tframes = set(["daily", "minute"]).intersection(os.listdir(csvdir))
+        tframes = set(["minute"]).intersection(os.listdir(csvdir))
 
         if not tframes:
             raise ValueError("'daily' and 'minute' directories "
